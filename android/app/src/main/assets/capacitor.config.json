@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "mbd",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

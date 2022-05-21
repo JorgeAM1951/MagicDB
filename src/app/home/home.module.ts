@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
-import { HomePage } from './home.page';
+import { HomePage } from './home.component';
 import { HomePageRoutingModule } from './home-routing.module';
 import { MessageComponentModule } from '../message/message.module';
 
@@ -15,6 +15,6 @@ import { MessageComponentModule } from '../message/message.module';
     MessageComponentModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomeComponent]
 })
-export class HomePageModule {}
+export class HomeComponentModule {}
