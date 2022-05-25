@@ -1,0 +1,36 @@
+<ion-content class="sign">
+  <form class="sign-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+      
+      <label class="sign-label" for="user">User</label>
+      <input 
+          class="sign-user"
+          type="text"
+          name="username"
+          [(ngModel)]="this.username"
+          placeholder="Username"
+          required
+      >
+      
+      <label class="sign-label" for="passwd">Password</label>
+      <input 
+          class="sign-passwd"
+          type="password" 
+          name="passwd" 
+          [(ngModel)]="this.passwd"
+          placeholder="Password"
+          required
+      >
+      <label class="sign-label" for="passwd">Repeat password</label>
+      <input 
+          class="sign-passwd"
+          type="password" 
+          name="passwd" 
+          [(ngModel)]="this.passwd_check"
+          placeholder="Password"
+          required
+      >
+      <p class="sign-message" *ngIf="this.passwd !== this.passwd_check">AAAAAAAAAAAAAAAAAAAAAAAA</p>
+      
+      <input class="sign-button" *ngIf="this.passwd === this.passwd_check" type="submit" value="Create User"> 
+  </form>
+</ion-content>

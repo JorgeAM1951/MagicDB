@@ -12,8 +12,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { HomeComponent } from './components/home/home.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { HomeComponent } from './home/home.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
@@ -28,11 +28,19 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import {MatDialogModule} from '@angular/material/dialog';
-import { CardInfoComponent } from './components/card-info/card-info.component';
-import { LoginPageComponent } from './components/login/login-page/login-page.component';
-import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { CardInfoComponent } from './card-info/card-info.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { FireUserService } from './services/fire-user.service';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { FavComponent } from './fav/fav.component';
+import { AdminDataComponent } from './admin-data/admin-data.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +48,16 @@ import { IonicModule } from '@ionic/angular';
     SearchBarComponent,
     HomeComponent,
     CardInfoComponent,
-    LoginPageComponent,
-    AdminPageComponent,
+    LoginComponent,
+    AdminComponent,
+    SignInComponent,
+    FavComponent,
+    AdminDataComponent
 
   ],
   imports: [
+    IonicModule,
+    ScrollingModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -59,6 +72,9 @@ import { IonicModule } from '@ionic/angular';
     MatDialogModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -72,7 +88,7 @@ import { IonicModule } from '@ionic/angular';
     IonicModule.forRoot(),
   ],
   providers: [
-    ScreenTrackingService,UserTrackingService
+    ScreenTrackingService,UserTrackingService, FireUserService
   ],
   bootstrap: [AppComponent]
 })

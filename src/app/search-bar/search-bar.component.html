@@ -1,0 +1,16 @@
+<ion-header class="search-container">
+  <form class="search-form"  #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <ion-button class="logo" routerLink="/" routerLinkActive="Activated">MBD</ion-button>
+      <ion-searchbar
+          class="search-input"
+          name="search"
+          ngModel
+          placeholder="Search your card"
+      ></ion-searchbar>
+  </form>
+
+  <div (click)="openLoginPage()">
+      <img class="search-user" src="../assets/user.png" alt="X">
+  </div>
+
+</ion-header>  

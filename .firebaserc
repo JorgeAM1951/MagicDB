@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mbd-pwm": {
+      "hosting": {
+        "app": [
+          "mbd-pwm"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mbd-pwm"
+  }
+}

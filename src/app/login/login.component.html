@@ -1,0 +1,28 @@
+<ion-content class="login">
+  <form class="login-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <ion-item>
+      <ion-label class="login-label" for="user">User</ion-label>
+      <ion-input 
+          class="login-user"
+          type="text"
+          name="username"
+          [(ngModel)]="this.username"
+          placeholder="Username"
+          required
+      ></ion-input>
+      
+      <ion-label class="login-label" for="passwd">Password</ion-label>
+      <ion-input 
+          class="login-passwd"
+          type="password" 
+          name="passwd" 
+          [(ngModel)]="this.passwd"
+          placeholder="Password"
+          required
+      ></ion-input>
+      
+      <input class="login-button" type="submit" value="Log In">
+    </ion-item> 
+  </form>
+  <a class="login-create" href="sign-in-page">Create user</a>
+</ion-content>

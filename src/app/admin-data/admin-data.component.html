@@ -1,0 +1,37 @@
+<ion-content class="admin">
+  <form class="admin-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+      
+      <label class="admin-label" for="name">First Name</label>
+      <ion-input 
+          class="admin-tag"
+          type="text"
+          name="name"
+          [(ngModel)]="this.nombre"
+          placeholder="Name"
+          required
+      ></ion-input>
+      
+      <label class="admin-label" for="color">Last Name</label>
+      <ion-input 
+          class="admin-tag"
+          type="text" 
+          name="color" 
+          [(ngModel)]="this.apellido"
+          required
+      ></ion-input>
+
+      
+      <label class="admin-label" for="img">Image</label>
+      <ion-input 
+          class="admin-tag"
+          type="text" 
+          name="img" 
+          [(ngModel)]="this.img"
+          placeholder="Colors"
+          value="Submit the link"   
+          required
+      ></ion-input>
+      
+      <ion-button class="admin-button" type="submit" value="Create card"></ion-button>
+  </form>
+</ion-content>

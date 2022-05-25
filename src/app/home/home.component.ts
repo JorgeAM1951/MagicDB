@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Card } from 'src/app/models';
-import { CardsService } from 'src/app/services/cards.service';
+import { Card } from '../models';
+import { CardsService } from '../services/cards.service';
 import { RouterModule } from '@angular/router';
 
 @Component({

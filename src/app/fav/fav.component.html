@@ -1,0 +1,31 @@
+<ion-content class="cards" [scrollEvents]="true">
+  <ng-container *ngFor="let card of cards">
+    <ion-card class="card" (click)="openCardInfo(card.name)">
+        <ion-card-header class="card-thumb-container"><!--https://api.scryfall.com/cards/db0a5840-cbf7-4899-932b-8bdcbbf2e5f8?format=image-->
+            <img 
+                *ngIf="card.card_image"
+                src="{{card.card_image}}"
+                alt="thumbnail"
+                class="card-thumbnail"
+            />
+            <p *ngIf="!card.card_image">No image</p>
+        </ion-card-header>
+        <ion-card-content class="card-description">
+            <p class="card-name">{{card.name}}</p>
+            <ion-item class="card-colors">
+                <ng-container *ngFor="let color of card.colors">
+                <ion-icon
+                    class="card-color"
+                    src="assets/{{color}}.png"
+                    alt="X"
+                >
+                </ion-icon>
+              </ng-container>
+              </ion-item>
+        </ion-card-content>
+    </ion-card>
+  
+</ng-container>
+
+
+</ion-content>
